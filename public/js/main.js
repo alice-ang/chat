@@ -11,7 +11,6 @@ const {username, room} = Qs.parse(location.search, {
 });
 
 // Join chatroom
-
 socket.emit('join-room', {username, room});
 
 // get room and users
@@ -19,25 +18,28 @@ socket.on('room-users', ({users, room}) => {
     outputRoomName(room);
     outputUsers(users);
 });
-
-
+socket.on('notify', () =>{
+    var audio = new Audio('chat.mp3');
+    audio.play()
+})
 socket.on('message', message => {
-    document.getElementById('player').play();
     outputMessage(message);
     messageContainer.scrollTop = messageContainer.scrollHeight;
 })
 
 chatForm.addEventListener('submit', e =>{
     e.preventDefault();
+    
     // Get text from input
     const msg = messageInput.value;
 
     // emit message to server
     socket.emit('chat-message', msg);
     
-    // Clear input and focus
-    messageInput.value ='';
-    messageInput.focus();
+     //Clear input and focus
+     messageInput.value = '';
+     messageInput.focus(); 
+
 })
 
 
