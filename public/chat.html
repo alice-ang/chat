@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
     <link rel="stylesheet" href="/css/style.css">
     <script src=https://kit.fontawesome.com/99f1e9d6bd.js crossorigin=anonymous></script>
     <title>Chatter</title>
@@ -22,7 +24,6 @@
                         <img src="https://source.unsplash.com/500x300/?nature">
                       </div>
                     <img class="circle" src="https://source.unsplash.com/200x200/?avatar"> 
-                    <p id="current-user"></p>
                 </div>
                 <h3><i class="fas fa-house-user"></i> Room</h3>
                 <h5 id="room-name"> </h5>
@@ -34,6 +35,9 @@
             <div id="message-container">
     
             </div>
+            <audio controls id="player">
+                <source src="chat.mp3" type="audio/mpeg">
+              </audio>
             <form id="chat-form">
                 <input type="text" placeholder="Enter message" id="message-input">
                 <button type="submit">Send <i class="fas fa-paper-plane"></i></button>

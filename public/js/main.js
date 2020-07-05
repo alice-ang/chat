@@ -22,6 +22,7 @@ socket.on('room-users', ({users, room}) => {
 
 
 socket.on('message', message => {
+    document.getElementById('player').play();
     outputMessage(message);
     messageContainer.scrollTop = messageContainer.scrollHeight;
 })
@@ -60,10 +61,7 @@ outputUsers = (users) => {
         const item = document.createTextNode(user.username);
         listItem.appendChild(item);
         userList.appendChild(listItem);
-        document.getElementById('current-user').innerText = user.username;
-
     });
-    
 }
 
 
