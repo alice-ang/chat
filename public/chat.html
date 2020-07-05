@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src=https://kit.fontawesome.com/99f1e9d6bd.js crossorigin=anonymous></script>
+    <title>Chatter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <div class="chat-container-top">
+                <span id="menu-button" style="font-size:30px;cursor:pointer; color: white" onclick="openNav()">&#9776;</span>
+                <a href="index.html" class="btn">Leave Room <i class="fas fa-sign-out-alt"></i></a>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <div class="user-view">
+                    <a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a>
+
+                    <div class="background">
+                        <img src="https://source.unsplash.com/500x300/?nature">
+                      </div>
+                    <img class="circle" src="https://source.unsplash.com/200x200/?avatar"> 
+                    <p id="current-user"></p>
+                </div>
+                <h3><i class="fas fa-house-user"></i> Room</h3>
+                <h5 id="room-name"> </h5>
+                <hr>              
+                <h3><i class="fas fa-users"></i> Users</h3>  
+                <ul id="users">
+                </ul>
+            </div>
+            <div id="message-container">
+    
+            </div>
+            <form id="chat-form">
+                <input type="text" placeholder="Enter message" id="message-input">
+                <button type="submit">Send <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="js/main.js"></script>
+</body>
+</html>
